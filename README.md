@@ -37,6 +37,18 @@ type Droid implements Character {
 }
 ```
 
+```graphql
+union Error = NotFoundError | AccessError | ValidationError
+```
+
+```graphql
+scalar DateTime
+
+type Droid {
+  id: String
+  createdOn: DateTime!
+}
+```
 
 ```graphql
 type Query {
@@ -47,14 +59,9 @@ type Query {
 ```
 
 ```graphql
-union Error = NotFoundError | AccessError | ValidationError
-```
-
-```graphql
 type Mutation {
   destroyDroid(id: String!): Droid
   destroyHuman(id: String!): Human
-  
 }
 ```
 
