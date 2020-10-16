@@ -65,3 +65,14 @@ type Mutation {
 }
 ```
 
+```graphql
+type Example {
+  oldId: Int!
+  @deprecated(
+    "reason": "Renamed to use standard naming convention and type for IDs"
+    "replacement": "id"
+    "deprecatedDate": "2020–10–03T10:45:49–08:00"
+    "expirationDate": "2021–01–01T00:00:00–08:00"
+  )
+}
+```
