@@ -100,3 +100,15 @@ type Query {
   getItemsByName(name: !String, next: !Int = 10, cursor: String):
 }
 ```
+
+
+```graphql
+type DroidInput {
+  name: String!
+  appearsIn: [Episode]
+}
+
+type Mutation {
+  createDroid(name: String!, appearsIn: [Episode], ...): DroidResult
+}
+```
