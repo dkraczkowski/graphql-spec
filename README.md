@@ -78,7 +78,7 @@ type Example {
 ```
 
 ```graphql
-type DroidInput {
+type CreateDroidInput {
   name: String!
   appearsIn: [Episode]
 }
@@ -103,11 +103,6 @@ type Query {
 
 
 ```graphql
-type DroidInput {
-  name: String!
-  appearsIn: [Episode]
-}
-
 type Mutation {
   createDroid(name: String!, appearsIn: [Episode], ...): DroidResult
 }
