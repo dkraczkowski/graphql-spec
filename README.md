@@ -83,8 +83,28 @@ type CreateDroidInput {
   appearsIn: [Episode]
 }
 
+type DroidInputError
+{
+  code: Int!
+  message: String!
+}
+
+type DroidDuplicatedError
+{
+  code: Int!
+  message: String!
+}
+
+
+union DroidCreationError = DroidInputError | DroidDuplicatedError | ...
+
+type DroidPayload {
+  droid: Droid
+  error: DroidCreationError
+}
+
 type Mutation {
-  createDroid(input: DroidInput!): DroidResult
+  createDroid(input: DroidInput!): DroidPayload
 }
 ```
 
@@ -104,6 +124,6 @@ type Query {
 
 ```graphql
 type Mutation {
-  createDroid(name: String!, appearsIn: [Episode], ...): DroidResult
+  createDroid(name: String!, appearsIn: [Episode], ...): DroidPayload
 }
 ```
