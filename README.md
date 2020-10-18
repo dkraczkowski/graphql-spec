@@ -76,3 +76,27 @@ type Example {
   )
 }
 ```
+
+```graphql
+type DroidInput {
+  name: String!
+  appearsIn: [Episode]
+}
+
+type Mutation {
+  createDroid(input: DroidInput!): DroidResult
+}
+```
+
+```graphql
+
+type PaginatedList {
+  nextPage: String
+  previousPage: String
+  
+}
+
+type Query {
+  getItemsByName(name: !String, next: !Int = 10, cursor: String):
+}
+```
