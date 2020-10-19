@@ -127,3 +127,21 @@ type Mutation {
   createDroid(name: String!, appearsIn: [Episode], ...): DroidPayload
 }
 ```
+
+```graphql
+{
+  user(id: "ZW5jaG9kZSBIZWxsb1dvcmxk") {
+    id
+    name
+    friendsConnection(first: 3) {
+      edges {
+        cursor
+        node {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+```
