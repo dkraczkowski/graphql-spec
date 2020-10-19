@@ -130,7 +130,7 @@ type Mutation {
 
 ```graphql
 {
-  user(id: "ZW5jaG9kZSBIZWxsb1dvcmxk") {
+  user(id: "kowalski") {
     id
     name
     friendsConnection(first: 3) {
